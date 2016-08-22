@@ -1,0 +1,331 @@
+.aui-page-hybrid .aui-page-header, .aui-page-hybrid .aui-navgroup-horizontal .aui-navgroup-inner, .aui-page-hybrid .aui-page-panel-inner{
+    width: 980px;
+}
+
+.aui-page-hybrid #footer .footer-body{
+    width: 100%;
+}
+
+.jttp-headline {
+    padding-bottom: 25px;
+}
+
+/* for daily progress */
+
+.jttp-headline-progress {
+    width: 50%;
+}
+
+div.jttp-headline-progress-number {
+    float: right;
+    color: #565656;
+}
+
+div.jttp-headline-progress-date {
+    float: left;
+    padding-bottom: 5px;
+    color: #565656;
+}
+
+/* --- */
+
+
+div.jttp-headline-date {  
+    padding-top: 4px;
+    /*font-weight: bold;*/
+    font-size: large;
+    vertical-align: middle;
+    color: #565656;
+}
+
+.stepper-group-container {
+    padding-left: 10px;
+}
+
+td.jttp-worklog-no-remaining {
+  color: red;
+}
+
+#jttp-worklog-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+table.aui>thead>tr>th {
+  color: #707070;
+}
+
+.aui-item.summary-module>table.aui>tbody>tr>td{
+    color: #707070;
+}
+
+table#jttp-worklog-table th#jttp-worklog-actions {
+  min-width: 5rem;
+  width: 5rem;
+}
+
+table#jttp-worklog-table th#jttp-worklog-issue-type {
+  min-width: 1rem;
+  width: 1rem;
+}
+
+table#jttp-worklog-table th#jttp-worklog-issue-key {
+  min-width: 5rem;
+  width: 5rem;
+}
+
+table#jttp-worklog-table th#jttp-worklog-issue-remaining {
+  min-width: 3rem;
+  width: 3rem;
+}
+
+table#jttp-worklog-table th#jttp-worklog-start {
+  min-width: 3rem;
+  width: 3rem;
+}
+
+table#jttp-worklog-table th#jttp-worklog-end {
+  min-width: 3rem;
+  width: 3rem;
+}
+
+table#jttp-worklog-table th#jttp-worklog-duration {
+  min-width: 5rem;
+  width: 5rem;
+}
+
+.aui-group>.aui-item.summary-module {
+    width: 40%;
+}
+
+/* Inline time input fields flex */
+div#jttp-logwork-time {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+div#jttp-logwork-time > div.field-group {
+  width: auto;
+  margin-right: 3rem;
+}
+
+div#jttp-logwork-time > div.field-group.duration {
+  margin-right: 0rem;
+}
+
+
+.aui-group.aui-group-split.bottom-module {
+    margin-top: 0px;
+}
+
+.aui-button.change-button{
+    margin-top: 1rem;
+}
+
+
+.aui-item.logwork-fields {
+    width: 50%;
+}
+
+#jttp-logwork-fields {
+    float:right;
+}
+
+#jttp-logwork-issue {
+    height: 35px;
+}
+
+.summary-container{
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.aui-group.aui-group-trio > .aui-item {
+    text-align: center;
+}
+
+.aui-group.aui-group-trio > .aui-item + .aui-item + .aui-item {
+    text-align: center;
+}
+
+.summary-content {
+    margin-bottom: 0.2rem;
+    margin-top: 0.2rem;
+}
+
+.summary-content-title {
+    color: #707070;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.summary-content-number {
+    margin-top: none;
+}
+
+.summary-content>p {
+    color: #707070;
+    font-weight: bold;
+    margin-top: 0px;
+}
+h4.sidebar-header {
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #e6e6e6;
+    line-height: 0.1em;
+    margin-bottom: 0.5rem;
+    margin-top: 3rem;
+}
+
+h4.sidebar-header span {
+    background: #fff;
+    padding-right: 0.5rem;
+    color: #707070;
+}
+
+/*bootstrap*/
+
+div.progress {
+    /*background-color: #f5f5f5;*/
+    background-color: #eeeeee;
+    border-radius: 3.01px;
+}
+
+div.progress .progress-bar-success {
+    background-color: #14892c;
+}
+
+div.progress .progress-bar-warning {
+    background-color: #f6c342;
+}
+
+div.progress .progress-bar-danger {
+    background-color: #d04437;
+}
+
+div.progress .progress-bar-danger-nowork {
+    background: repeating-linear-gradient(
+    45deg,
+    #d7908b,
+    #d7908b 10px,
+    #d04437 10px,
+    #d04437 20px
+  );
+    background: -webkit-repeating-linear-gradient(
+    45deg,
+    #d7908b,
+    #d7908b 10px,
+    #d04437 10px,
+    #d04437 20px
+  );
+    background: -moz-repeating-linear-gradient(
+    45deg,
+    #d7908b,
+    #d7908b 10px,
+    #d04437 10px,
+    #d04437 20px
+  );
+    background: -o-repeating-linear-gradient(
+    45deg,
+    #d7908b,
+    #d7908b 10px,
+    #d04437 10px,
+    #d04437 20px
+  );
+    background: -ms-repeating-linear-gradient(
+    45deg,
+    #d7908b,
+    #d7908b 10px,
+    #d04437 10px,
+    #d04437 20px
+  );
+}
+
+div.progress .progress-bar-warning-nowork {
+    background: repeating-linear-gradient(
+    45deg,
+    #bca979,
+    #bca979 10px,
+    #f6c342 10px,
+    #f6c342 20px
+  );
+    background: -webkit-repeating-linear-gradient(
+    45deg,
+    #bca979,
+    #bca979 10px,
+    #f6c342 10px,
+    #f6c342 20px
+  );
+    background: -moz-repeating-linear-gradient(
+    45deg,
+    #bca979,
+    #bca979 10px,
+    #f6c342 10px,
+    #f6c342 20px
+  );
+    background: -o-repeating-linear-gradient(
+    45deg,
+    #bca979,
+    #bca979 10px,
+    #f6c342 10px,
+    #f6c342 20px
+  );
+    background: -ms-repeating-linear-gradient(
+    45deg,
+    #bca979,
+    #bca979 10px,
+    #f6c342 10px,
+    #f6c342 20px
+  );
+}
+
+div.progress .progress-bar-success-nowork {
+    background: repeating-linear-gradient(
+    45deg,
+    #7ec58b,
+    #7ec58b 10px,
+    #14892c 10px,
+    #14892c 20px
+  );
+    background: -webkit-repeating-linear-gradient(
+    45deg,
+    #7ec58b,
+    #7ec58b 10px,
+    #14892c 10px,
+    #14892c 20px
+  );
+    background: -moz-repeating-linear-gradient(
+    45deg,
+    #7ec58b,
+    #7ec58b 10px,
+    #14892c 10px,
+    #14892c 20px
+  );
+    background: -o-repeating-linear-gradient(
+    45deg,
+    #7ec58b,
+    #7ec58b 10px,
+    #14892c 10px,
+    #14892c 20px
+  );
+    background: -ms-repeating-linear-gradient(
+    45deg,
+    #7ec58b,
+    #7ec58b 10px,
+    #14892c 10px,
+    #14892c 20px
+  );
+}
+
+.progress-label {
+    color: #565656;
+}

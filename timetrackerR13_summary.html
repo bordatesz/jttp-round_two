@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+    <title>Timetracker</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/sinon.js/1.15.4/sinon.js"></script>
+    <script src="http://aui-cdn.atlassian.com/aui-adg/5.6.7/js/aui.js"></script>
+    <script src="http://aui-cdn.atlassian.com/aui-adg/5.6.7/js/aui-experimental.js"></script>
+    <script src="http://aui-cdn.atlassian.com/aui-adg/5.6.7/js/aui-datepicker.js"></script>
+    <script src="js/jttp.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://aui-cdn.atlassian.com/aui-adg/5.6.7/css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="http://aui-cdn.atlassian.com/aui-adg/5.6.7/css/aui-experimental.css" />
+    <link rel="stylesheet" type="text/css" href="css/jttp.css" />
+    <link rel="stylesheet" href="css/bootstrap-3.3.6-dist/css/bootstrap-progress.css">
+</head>
+
+<body class="aui-page-hybrid">
+    <!-- felüldefiniálni mert kicsi -->
+
+
+
+
+    <header id="header" role="banner">
+        <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
+            <div class="aui-header-inner">
+                <div class="aui-header-primary">
+                    <h1 id="logo" class="aui-header-logo aui-header-logo-aui">
+              <a href="http://example.com/"> <span class="aui-header-logo-device">AUI</span></a>
+            </h1>
+                    <ul class="aui-nav">
+                        <li><a href="http://example.com/">Nav</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section id="content" role="main">
+        <!-- https://docs.atlassian.com/aui/latest/docs/page.html -->
+
+        <header class="aui-page-header">
+            <div class="aui-page-header-inner">
+                <div class="aui-page-header-image">
+                    <span class="aui-avatar aui-avatar-large"> 
+              <span class="aui-avatar-inner">
+                <img alt="Everit Timetracker logo" src="images/jttp144.png" />
+              </span>
+                    </span>
+                </div>
+                <div class="aui-page-header-main">
+                    <h1>Timetracker</h1>
+                </div>
+                <div class="aui-page-header-actions">
+                    <div class="aui-buttons">
+                        <button class="aui-button aui-button-light">
+                            <span class="aui-icon aui-icon-small aui-iconfont-configure"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- https://docs.atlassian.com/aui/latest/docs/page-content-layout.html-->
+        <div class="aui-page-panel">
+
+            <div class="aui-page-panel-inner">
+
+                <section class="aui-page-panel-content">
+
+                    <div class="jttp-headline">
+
+                        <div class="aui-group aui-group-split">
+                            <div class="aui-item">
+                                <div class="jttp-headline-date" id="jttp-headline-date">
+                                    <p>January 15, 2016</p>
+                                </div>
+                            </div>
+                            <div class="aui-item">
+
+                                <div class="buttons-container" id="jttp-headline-day-stepper-container">
+                                    <button id="jttp-headline-day-calendar" class="aui-button aui-button-light" title="Pick a date">
+                                        <span class="aui-icon aui-icon-small aui-iconfont-calendar">Open calendar</span>
+                                    </button>
+                                    <div class="aui-buttons stepper-group-container">
+                                        <button id="jttp-headline-day-prev" class="aui-button aui-button-light" title="Previous day">
+                                            <span class="aui-icon aui-icon-small aui-iconfont-arrows-left">Previous day</span>
+                                        </button>
+                                        <button class="aui-button aui-button-light button-today" title="Today">
+                                            Today
+                                        </button>
+                                        <button id="jttp-headline-day-next" class="aui-button aui-button-light" title="Next day">
+                                            <span class="aui-icon aui-icon-small aui-iconfont-arrows-right">Next day</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="summary-container">
+                        <div class="aui-group aui-group-trio">
+                            <div class="aui-item">
+                                <label class="progress-label" for="day-progress">Day: 4h 10m / 5h 10m</label>
+                                <div id="day-progress" class="progress" style="height:8px; margin-bottom:0px;">
+                                    <div class="progress-bar progress-bar-danger" style="width: 50%">                                        
+                                    </div>
+                                    <div class="progress-bar progress-bar-danger-nowork" style="width: 30%">                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="aui-item">
+                                <label class="progress-label" for="day-progress">Week: 2d 1h 30m / 2d 2h 30m</label>
+                                <div id="week-progress" class="progress" style="height:8px; margin-bottom:0px;">
+                                    
+                                    <div class="progress-bar progress-bar-warning" style="width: 30%">
+                                    </div>
+                                    <div class="progress-bar progress-bar-warning-nowork" style="width: 30%">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="aui-item">
+                                <label class="progress-label" for="day-progress">Month: 3w 4h / 3w 5h</label>
+                                <div id="month-progress" class="progress" style="height:8px; margin-bottom:0px;">
+                                    
+                                    <div class="progress-bar progress-bar-success" style="width: 70%">
+                                    </div>
+                                    <div class="progress-bar progress-bar-success-nowork" style="width: 15%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table id="jttp-worklog-table" class="aui">
+                        <thead>
+                            <tr>
+                                <th id="jttp-worklog-issue-type">T</th>
+                                <th id="jttp-worklog-issue-key">Issue</th>
+                                <th id="jttp-worklog-issue-remaining">Remaining</th>
+                                <th id="jttp-worklog-start">Start</th>
+                                <th id="jttp-worklog-end">End</th>
+                                <th id="jttp-worklog-duration">Duration</th>
+                                <th id="jttp-worklog-description">Description</th>
+                                <th id="jttp-worklog-actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="http://jira.everit.biz/secure/viewavatar?size=xsmall&avatarId=11415&avatarType=issuetype" />
+                                </td>
+                                <td><a class="issue-link" data-issue-key="TEST-1" href="/browse/TEST-1" title="Isseu neve">TEST-1</a>
+                                </td>
+                                <td title="Nem kerekített érték">5h 10m</td>
+                                <td>09:50</td>
+                                <td>10:50</td>
+                                <td>1h</td>
+                                <td>Fontos meló</td>
+                                <td><span class="aui-icon aui-icon-small aui-iconfont-edit" title="Edit">Edit</span> &nbsp; <span class="aui-icon aui-icon-small aui-iconfont-delete" title="Delete">Delete</span> &nbsp; <span class="aui-icon aui-icon-small aui-iconfont-copy-clipboard" title="Copy">Copy</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="http://jira.everit.biz/secure/viewavatar?size=xsmall&avatarId=11400&avatarType=issuetype" />
+                                </td>
+                                <td><a class="issue-link" data-issue-key="NOWORK1-1" href="/browse/NOWORK-1" title="Isseu neve">NOWORK-1</a>
+                                </td>
+                                <td class="jttp-worklog-no-remaining" title="Nem kerekített érték">0m</td>
+                                <td>10:50</td>
+                                <td>11:30</td>
+                                <td>40m</td>
+                                <td>Ebéd</td>
+                                <td><span class="aui-icon aui-icon-small aui-iconfont-edit" title="Edit">Edit</span> &nbsp; <span class="aui-icon aui-icon-small aui-iconfont-delete" title="Delete">Delete</span> &nbsp; <span class="aui-icon aui-icon-small aui-iconfont-copy-clipboard" title="Copy">Copy</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="http://jira.everit.biz/secure/viewavatar?size=xsmall&avatarId=11415&avatarType=issuetype" />
+                                </td>
+                                <td><a class="issue-link" data-issue-key="DEMO-1" href="/browse/DEMO-1" title="Isseu neve">DEMO-1</a>
+                                </td>
+                                <td title="Nem kerekített érték">5d 3h</td>
+                                <td>11:30</td>
+                                <td>14:00</td>
+                                <td>2h 30m</td>
+                                <td>Demo intézése</td>
+                                <td><span class="aui-icon aui-icon-small aui-iconfont-edit" title="Edit">Edit</span> &nbsp; <span class="aui-icon aui-icon-small aui-iconfont-delete" title="Delete">Delete</span> &nbsp; <span class="aui-icon aui-icon-small aui-iconfont-copy-clipboard" title="Copy">Copy</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+                    <div class="buttons-container">
+                        <div class="buttons">
+                            <input class="aui-button change-button" type="submit" value="Move all" id="jttp-logwork-change-date-all" name="lw_chgdate" title="Move all the worklogs to a particular day">
+                        </div>
+                    </div>
+                    <h4 name="add_worklog" class="sidebar-header"><span>Add Worklog</span></h4>
+                    <form class="aui top-label" id="jttp-logwork-form">
+                        <div class="aui-group aui-group-split bottom-module">
+
+                            <div class="aui-item">
+                                <div class="issue-desc-container">
+                                    <div class="field-group">
+                                        <label for="lw_issue">Issue <span class="aui-icon icon-required">(required)</span></label>
+                                        <textarea id="jttp-logwork-issue" class="textarea full-width-field" name="lw_issue" tabindex="3"></textarea>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="aui-item logwork-fields">
+
+
+
+                                <section id="jttp-logwork-fields">
+
+
+                                    <div id="jttp-logwork-time" class="full-width-field">
+                                        <div class="field-group">
+                                            <label for="lw_start">Start Time <span class="aui-icon icon-required">(required)</span></label>
+                                            <!-- TODO: add the required="required" attribute to the inpuptfield if the submit fails -->
+                                            <input id="jttp-logwork-time-start" class="text short-field" type="text" name="lw_start" maxlength="5" tabindex="1" pattern="^([01][0-9]|2[0-3]):[0-5][0-9]$" title="hh:mm">
+                                            <input id="jttp-logwork-time-start-now" class="button" type="button" value="Now">
+                                        </div>
+
+                                        <div class="field-group">
+                                            <label for="lw_end">End Time</label>
+                                            <input id="jttp-logwork-time-end" class="text short-field" type="text" name="lw_end" maxlength="5" tabindex="2" pattern="^([01][0-9]|2[0-3]):[0-5][0-9]$" title="empty or hh:mm">
+                                            <input id="jttp-logwork-time-end-now" class="button" type="button" value="Now">
+                                        </div>
+
+                                        <div class="field-group duration">
+                                            <label for="lw_duration">Duration</label>
+                                            <input id="jttp-logwork-time-duration" class="text short-field" type="text" name="lw_duration" maxlength="5" tabindex="2" pattern="^([01][0-9]|2[0-3]):[0-5][0-9]$" title="empty or hh:mm">
+                                        </div>
+
+                                    </div>
+
+
+                                </section>
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label for="lw_comment">Work Description </label>
+                            <textarea id="jttp-logwork-comment" rows="3" class="textarea full-width-field" name="lw_comment" tabindex="4"></textarea>
+                        </div>
+                        <div class="buttons-container">
+                            <div class="buttons">
+                                <input class="aui-button aui-button-primary" type="submit" value="Save" id="jttp-logwork-save" name="lw_save" tabindex="5">
+                                <input class="aui-button aui-button-light" type="reset" value="Cancel" id="jttp-logwork-cancel" name="lw_cancel">
+                            </div>
+                        </div>
+
+
+                    </form>
+
+                </section>
+            </div>
+        </div>
+
+
+        <footer id="footer" role="contentinfo">
+            <section class="footer-body">
+                <ul>
+                    <li>I &hearts; AUI</li>
+                </ul>
+                <div id="footer-logo">
+                    <a href="http://www.atlassian.com/" target="_blank">Atlassian</a>
+                </div>
+            </section>
+        </footer>
+    </section>
+</body>
+
+</html>
